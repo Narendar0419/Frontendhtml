@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ 
+    .allbox{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap-reverse;
+        
+        
+        
+    }
+
+    .allbox >div{
+        background-color: chocolate;
+        font-size: 20px;
+        width: 250px;
+        line-height: 100px;
+        margin: 10px;
+     text-align: center;
+     
+     
+    }
+    nav{
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(15, 15, 15);
+        padding: 15px;
+          
+        
+    }
+    nav a{
+       
+        color: rgb(229, 229, 236);
+        text-decoration: none;
+      margin-top: 28px;
+       
+        
+    }
+    .logo{
+        border: solid black;
+        margin-right: 65%;
+        width: 79px;
+        height: 80px;
+    }
+    
+    .container{
+        display: flex;
+         flex-wrap: wrap;
+         gap: 20px;
+         padding: 20px;
+         
+    }
+    .card{
+        flex: 1 1 160px;
+        border: solid green;
+         border-radius: 15px;
+         height: 190px;
+         width: 200px;
+         font-size: 20px;
+        text-align: center;
+         color: cornflowerblue;
+       
+    }
+    .pricebox{
+        display: flex;
+        align-items: stretch;
+       
+        gap: 20px;
+        padding: 20px;
+        
+
+    }
+    .pricebox > div{
+        flex: 1;
+        height: 180px;
+        width: 160px;
+        border: 20px;
+        background-color: rgb(232, 140, 20);
+        border-radius: 20px;
+        border: solid green;
+         min-width: 300px;
+    }
+    .sidebar{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 100vh;
+        
+    }
+    .sidebar a{
+       text-decoration: none;
+        color: azure;
+        justify-content: space-around;
+    }
+</style>
+<body style="background-color: bisque;">
+    <h2>1. Centering box (basics)
+
+Create a full‑page container with one box in the middle (both horizontally and vertically) using display: flex, justify-content, align-items.
+Ask them to try flex-start, flex-end, center, space-between, space-around and observe changes.</h2>
+<div class="allbox">
+    <div>box1</div>
+     <div>box2</div>
+      <div>box3</div>
+       <div>box4</div>
+        <div>box5</div>
+         <div>box6</div>
+          <div>box7</div>
+           <div>box8</div>
+
+</div>
+<br>
+<h2>2. Horizontal navbar
+Build a simple navbar: logo on left, menu items on right, using display: flex and justify-content: space-between.
+Add hover effect and make items wrap on small screens using flex-wrap: wrap.</h2>
+<nav>
+    <img src="data:image/png;base64,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" class="logo" alt="">
+    
+        <a href="#">about us</a>
+        <a href="#">service</a>
+        <a href="#">contact</a>
+        <a href="#">reviews</a>
+    
+</nav>
+<br>
+<h2>3. Card row with wrapping Create 6 product cards in one parent flex container.On large screen show them in one row; on small width they should automatically wrap to next line using flex-wrap and gap.
+​</h2>
+<div class="container">
+    <div class="card">
+        product no1
+    </div>
+     <div class="card">
+    product no2
+    </div>
+     <div class="card">
+        product no3
+    </div>
+     <div class="card">
+        product no4</div>
+     <div class="card">
+        product no5
+    </div>
+     <div class="card">
+        product no6
+    </div>
+</div> 
+<br>
+<h2>4. Pricing plans (alignment)
+
+Make three pricing boxes as flex children with same height using align-items: stretch.
+Use flex: 1 so each box grows equally; play with one box having more text to show flex behaviour.
+​</h2>
+<div class="pricebox">
+    <div>TV 20000</div>
+    <div>music system45000</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Omnis corrupti in dolorum officia vero veniam doloribus ipsum excepturi 
+        consequuntur sunt.</div>
+        <div>washing 30000</div>
+</div>
+<br>
+<h2>Sidebar layout (order + responsive)
+Create a layout with sidebar and main content using display: flex and flex: 0 0 250px for sidebar, flex: 1 for main.</h2>
+<br>
+<nav class="sidebar">
+    
+        <a href="#">about us</a>
+        <a href="#">service</a>
+        <a href="#">contact us</a>
+        <a href="#">home</a>
+    
+</nav>
+
+</body>
+</html>
