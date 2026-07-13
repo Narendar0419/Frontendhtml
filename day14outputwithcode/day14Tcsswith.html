@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>    
+body {
+    background-color: rgb(207, 165, 246); /* Default */
+}
+
+@media (max-width:768px){
+    body{
+        background-color: lightblue;
+    }
+}
+.task1{
+    height: 100px;
+    width: 100px;
+    background-color: blueviolet;
+}
+.task1:hover{
+        background-color: aquamarine;
+        border: solid black;
+       transition: 3s;
+       color: blue;
+    }
+    .task2{
+    height: 50px;
+    width: 50px;
+    background-color: blueviolet;
+}
+.task2:hover{
+    
+    width: 200px;
+    height: 50px;
+    transition: 3s;
+    transform: translate(1);
+}
+.task3{
+    height: 60px;
+    width: 100px;
+    background-color: bisque;
+
+}
+.task3:hover{
+    width: 250px;
+    height: 100px;
+    background-color: chocolate;
+
+    box-shadow: 0 10px 60px rgba(8, 4, 2, 1);
+}
+.task4{
+    width: 200px;
+    height: 100px;
+    background-color: burlywood;
+      opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.task4:hover{
+ opacity: 1;
+ background-color: brown;
+ color: aliceblue;
+}
+/* .task5 h2{
+    font-size: 30px;
+    color: black;
+    font-size: 40px; } */
+.task5 h2{
+           font-family: Arial, Helvetica, sans-serif;
+           font-size: 70px;
+           color: darkgreen;
+           
+}
+.task5 h2:hover{
+            transition: 4s;
+           font-weight: 900;
+           color: rgb(242, 78, 8);
+           width: 200px;
+           height: 300px;
+}
+.task5 h3{
+    font-size: 30px;
+    color: black;
+    width: 200px;
+           height: 300px;
+}
+.task5 h3:hover{
+     font-family: Georgia, 'Times New Roman', Times, serif;
+           font-weight: 900;
+           color: rgb(242, 226, 8);
+           width: 200px;
+           height: 300px;
+}
+#under{
+    text-decoration: underline;
+}
+.task6 h2{
+    font-weight: bolder;
+}
+.task6 h3{
+    font-style: italic;
+}
+.task7{
+    width: 80%;
+    margin: 0%;
+    padding: 20px;
+    border: solid black;
+    height: 200px;
+    max-width: 600px;
+   
+    background-color: crimson;
+
+}
+
+ .task8 p{
+    font-size: 1.5rem;
+ }
+ .task9 h1{
+font-size:4vw;
+ }
+}
+
+
+  </style>
+<body>
+    <H1>1.Basic Hover Color Change with Transition</H1>
+    <div class="task1" >
+      task1
+    </div>
+    <br>
+    <h1>2.Make an element grow on hover using transform and transition.</h1>
+    <div class="task2">
+        task2
+    </div>
+    <br>
+    <h1>3.Change color, size, and shadow on hover.</h1>
+    <div class="task3">
+task3        
+    </div>
+    <br>
+
+    <h1>4.Reveal content with opacity & transition.</h1>
+    <div class="task4">
+<h2>opacity task</h2>
+    </div> 
+    <br>
+    <h1>5.Fonts-Apply different font families and sizes in diffeerent tags</h1>
+    <div class="task5">
+        <h2>hello world</h2>
+        <br>
+        <h3>color change</h3>
+    </div>
+    <br>
+    <h1>6.Text Styles-Use bold, italic, underline, etc.</h1>
+    <div class="task6">
+<h2>bold text</h2>
+<h3>italic text</h3>
+<h2 id="under">underline text</h2>
+    </div>
+    <br>
+    <h1>7.Create a box that takes up 80% of the screen width but no more than 600px.</h1>
+    <div class="task7">
+        hello box
+    </div>
+    <br>
+    <h1>8.Set a paragraph’s font size to 1.5rem and explain how it behaves on different devices.</h1>
+    <div class="task8">
+        <p> thw rem font size refers html font most of the root font size is 16px 1 rem equal to 16px 1.5 frem means 16 plus and half from 16 that is 8 so it will takes 24px </p>
+    </div>
+      <br>
+      <div class="task9 ">
+      <h1>9.Use vw to make a heading that scales with screen size. 1vw equal to 1%</h1>
+     </div>
+     <br>
+     
+        <h1>10.Write a media query that changes background color below 768px</h1>
+     
+</body>
+</html>
