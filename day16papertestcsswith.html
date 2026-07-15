@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .card{
+        padding: 20px;
+        background-color: beige;
+        border-radius: 10px;
+        height: 450px;
+        width: 300px;
+    }
+    #name{
+        font-size: medium;
+        font-family: Arial, Helvetica, sans-serif;
+        color: red;
+    }
+    .card #membership{
+        padding: 20px;
+        height: 100px;
+        width: 200px;
+        border: solid black;
+    }
+     #city{
+        font-weight: bold;
+     }
+     #contact{
+        border: solid black;
+        width: 150px;
+        height: 30px;
+        background-color: brown;
+        color: white;
+        border-radius: 10px;
+        text-align: center;
+        padding: 10px;
+        
+     }
+     nav {
+        display: inline-flex;
+        height: 50px;
+        width: 100%;
+        background-color: rgb(230, 163, 163);
+    
+     }
+    nav ul {
+        
+        margin-left: 70%;    
+        justify-content: space-between;
+     }
+     #cen{
+        text-align: center;
+     }
+     .dashboard{
+        display: grid;
+        grid-template-columns: repeat(auto-fit);
+        gap: 20px;
+        box-sizing: border-box;
+        justify-content: center;
+        
+     }
+     .dashboard{
+        transition: 3s;
+     }
+     .dashboard:hover{
+        transform: scale(1.1,1.1);
+     }
+     .card{
+        height: 100px;
+        width: 200px;
+     }
+</style>
+<body style="background-color: rgb(118, 230, 118);">
+    <form action="day02.html">
+<label for="name">name</label> 
+<input type="text"  id="name" required> 
+<br>
+ph no: <input type="phonenumber" required> 
+<br>
+email: <input type="email" required> 
+<br>
+<label for="gender">gender</label> <br>
+male<input type="radio" id="male" name="gender" value="male">
+female<input type="radio" id="female" name="gender" value="female">
+others: <input type="radio" name="gender" value="others" > 
+<br>
+<table border="1">
+    <tr>
+        <th>customer id</th>
+        <th>customer name</th>
+        <th>city</th>
+        <th>membership id</th>
+        <th>purchase amount</th>
+    </tr>
+    <tr>
+        <td>
+            2001 
+        </td>
+        <td>
+            naren
+        </td>
+        <td>
+            chennai
+        </td>
+        <td>premium</td>
+       <main> <td>
+            55000
+        </td> </main>
+    </tr>
+    <tr>
+        <td>2002</td>
+        <td>
+            arun
+        </td>
+        <td>chennai</td>
+        <td>economic</td>
+        <td>40000</td>
+    </tr>
+</table>
+<br>
+<h1>customer relationship manage</h1> 
+<br>
+<p>para tag</p>
+<ol type="i">
+    <li>one</li>
+    <li>two</li>
+<li>three</li>
+<li>four</li>
+<li>five</li>
+</ol>
+<br>
+<ul type="disc">
+    <li>one</li>
+<li>two</li>
+<li>three</li>
+<li>four</li>
+<li>five</li>
+</ul>
+<br>
+<img width="200px" height="100px"  src="https://img.magnific.com/free-photo/closeup-shot-beautiful-butterfly-with-interesting-textures-orange-petaled-flower_181624-7640.jpg?semt=ais_hybrid&w=740&q=80" alt="img">
+<h3>name</h3>
+<p>
+    phonenumber
+    <a href="78767657655">78767657655</a>
+</p>
+<p>
+    email:
+    <a href="email@gmail.com">email@gmail.com</a>
+</p>
+<br>
+<img src="data:image/jpeg;base64,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" alt="logo">
+<h1>heading</h1>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque nostrum corporis eum, sapiente modi atque quo velit error.</p>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis harum sit totam. Accusantium iste facilis maiores cumque soluta enim hic corrupti dolorem officia.</p>
+<ol type="1">
+      <li>one</li>
+    <li>two</li>
+<li>three</li>
+<li>four</li>
+</ol>
+<br>
+<ul type="cricle">
+      <li>one</li>
+    <li>two</li>
+<li>three</li>
+<li>four</li>
+</ul>
+<br>
+<table  border="2">
+    <tr><th>row1</th>
+    <th>row2</th>
+<th>row3</th>
+<th>row4</th>
+<th>row5</th>
+<th>row6</th>
+    </tr>
+</table>
+<br>
+<br>
+<br>
+
+<img width="200px" height="100px" src="https://img.magnific.com/free-photo/closeup-shot-beautiful-butterfly-with-interesting-textures-orange-petaled-flower_181624-7640.jpg?semt=ais_hybrid&w=740&q=80" alt="img">
+<br>
+<a href="#contactus">contactus</a>
+<br>
+    </form>
+    <div class="card">
+        <img  src="https://img.magnific.com/free-photo/closeup-shot-beautiful-butterfly-with-interesting-textures-orange-petaled-flower_181624-7640.jpg?semt=ais_hybrid&w=740&q=80" width="200px" height="124px" alt="">
+        <h1 id="name">card </h1>
+        <img id="membership"    src="https://www.shutterstock.com/shutterstock/photos/253926106/display_1500/stock-vector-premium-membership-golden-badge-with-red-ribbon-and-text-253926106.jpg" alt="">
+        <h2 id="city">chennai</h2>
+        <h2 id="contact">86668753</h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <nav>
+        <h2>navbar</h2>
+       <ul>
+        <a href="home">home</a>
+        <a href="contactus">contactus</a>
+        <a href="about">about</a>
+    </nav>
+    <br>
+    <h1 id="cen">customer dashboard</h1>
+    <div class="dashboard">
+        <div class="card">
+            <h2>total customer</h2>
+            <p>15000</p>
+
+        </div>
+         <div class="card">
+            <h2>new customer</h2>
+            <p>1500</p>
+            
+        </div>
+         <div class="card">
+            <h2>active customer</h2>
+            <p>1000</p>            
+        </div>
+         <div class="card">
+            <h2>premium members</h2>
+            <p>150</p>
+        </div>
+         <div class="card">
+            <h2>order</h2>
+            <p>478</p>
+        
+        </div>
+         <div class="card">
+            <h2>revinue</h2>
+            <p>1500000</p>
+        </div>
+         <div class="card">
+            <h2>feedback</h2>
+            <p>90%</p>
+            
+        </div>
+         <div class="card">
+            <h2>support ticket</h2>
+            <p>15</p>
+            
+        </div>
+    </div>
+</body>
+</html>
