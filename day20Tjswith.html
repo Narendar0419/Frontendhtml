@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         function mul(a,b){
+//             return a*b;
+//         } console.log(10,20)
+ const multiply =function(a,b){
+    return a*b
+ } 
+ console.log(20,20)
+// console.log("----------")
+let series = () =>{
+   let v=" ";
+    for(let i=1;i<=20;i++) {
+    v +=i + " ";
+    }
+    return v;
+};
+console.log( series())
+console.log("----------")
+let odd = () =>{
+    let v=" ";
+    n=Number(prompt("enter a number to see odd series"))
+    for(let i=1;i<=n;i+=2){
+    v+=i+" ";
+    }
+    return v;
+};
+console.log(odd())
+console.log("----------")
+let even = () =>{
+    let v=" ";
+    n=Number(prompt("enter a number to see even series"))
+    for(let i=0;i<=n;i+=2){
+    v+=i+" ";
+    }
+    return v;
+};
+console.log(even())
+console.log("----------")
+
+let add5 = () =>{
+    let v=" ";
+for(let i=5;i<=25;i+=5){
+v+=i + " ";
+}
+return v;
+};
+console.log(add5())
+ console.log("----------")
+let oddplus = () =>{
+   let v=" ";
+    for(let i=1;i<=20;i+=2) {
+    v +=i +  " +" + " " ;
+    }
+    return v;
+};
+console.log( oddplus())
+
+console.log("----------")
+let evenplus = () =>{
+   let v=" ";
+    for(let i=0;i<=20;i+=2) {
+    v +=i + "+ " + " ";
+    }
+    return v;
+};
+console.log( evenplus())
+
+
+console.log("----------")
+let plusseries= () =>{
+   let v=" ";
+    for(let i=1;i<=20;i++) {
+    v +=i + "+ " + " ";
+    }
+    return v;
+};
+console.log( plusseries())
+console.log("----------")
+let plus5series= () =>{
+   let v=" ";
+    for(let i=5;i<=20;i+=5) {
+    v +=i + "+ " + " ";
+    }
+    return v;
+};
+console.log( plus5series())
+console.log("----------")
+let addlash= () =>{
+   let v=" ";
+    for(let i=1;i<=20;i++) {
+    v +=i + "/ " + i +"! ";
+    }
+    return v;
+};
+console.log( addlash())
+console.log("----------")
+let evenlash = ()=>{
+    v=" ";
+    n=Number(prompt("enter a number to even lash"))
+    for(let i=0;i<=n;i+=2){
+        v+=i + "/" + i+ " !" + " "
+    }
+    return v
+}
+console.log(evenlash())
+console.log("-----------")
+let oddlash =()=>{
+    v=" "
+    for(i=1;i<=20;i+=2){
+        v+=i + " /" +i+ " !" +" "
+    }
+    return v
+}
+console.log(oddlash())
+console.log("-------------")
+let amstrong = ()=>{
+    let temp,r,sum=0;
+    n=Number(prompt("enter amstrong number"))//153
+    temp=n;
+    while(temp>0){
+        r=parseInt(temp)%10; // 3
+        sum+=r*r*r; //3 sqr agum 27
+        temp=parseInt (temp)/10;
+}
+
+if(sum==n){
+    console.log(`${n}amstrong number `)
+}
+else{
+    console.log(`${n}not amstrong number`)
+}
+}
+amstrong()
+console.log("---------")
+let primeornot =()=>{
+    n=Number(prompt("enter a number to find prime number or not")) //8
+    f=0;
+    let i=1;
+    while(i<=n)
+    {
+        i++ // means +++ one so 1 2 3 4 till 8
+        if(n%i==0) // n=8 , i =1 so 8%1 8%2 8%3 8%4 8%5 8%6 8%7 8%8
+        f++ // one time 1 dived   2nd time 3rd time 4th time
+    }
+    if(f==2)
+    {
+        console.log(`the number you entered ${n} is prime`)
+    }
+    else{
+        
+        console.log(`the number you entered ${n} is not a prime`)
+    }
+} 
+primeornot()
+console.log("------------------")
+let primeseries =()=>{
+    s=" "
+    n=Number(prompt("enter a number to find prime series"))
+    
+    for( let i=2;i<=n;i++){
+      f=0;
+      for(let a=1;a<=i;a++) {
+        if(i%a==0) {
+        f++} //i= 1 to till n 1%
+      } 
+ if(f==2){
+    s+=i+" "
+ }
+    }
+    console.log("prime series"+s)
+}
+primeseries()
+console.log("---------------")
+let amstrongseries=()=>{
+   let s=" ";
+   for(let n=1;n<=1000;n++){
+   let temp =n;
+let sum=0;
+while(temp>0){
+     let r=parseInt(temp)%10;
+    sum+=r*r*r;
+    temp=parseInt(temp)/10;
+}
+if(sum==n){
+    s+=n+" ";
+}
+
+}
+console.log("amstrong number series  ", s);
+
+}
+amstrongseries()
+console.log("-------------")
+let Fibnacie=()=>{
+    n=Number(prompt("enter a number to  fibnacie "))
+    let a=0;
+    let b=1;
+    s=" ";
+    for(let i=1;i<=n;i++){
+        s+=a;
+        let c=a+b;
+        a=b;
+        b=c;
+    }
+    console.log("fibnacie number",s)
+}
+Fibnacie()
+console.log("---------------")
+let table=()=>{
+    n=Number(prompt("enter which table want"))
+    for(let i=1;i<=12;i++){
+        console.log(` ${n} x ${i} = ${i*n}`)
+    }
+} 
+table()
+console.log("--------------------")
+let sumofdigit=()=>{
+n=Number(prompt("enter a number to find some of digit")) //123
+sum=0; // sum = 0
+while(n>0){
+    let r=parseInt(n)%10; // now r=123%10 so we got 3 ,next 12%10=2 , 1%10=1
+    sum+=r; // sum = 0 so 0+3=3 , now sum is 3 + 2 =5 , 5+1 =6
+    n=parseInt(n)/10; //123/10 Q =12 , now 12/10 = 1 , 1/10=0
+}
+console.log("sum of digit",sum)
+}
+sumofdigit()
+console.log("-------------")
+let pali=()=>{
+    str=prompt("type word to check palindrom or not")
+    s="";
+    for(let i=str.length-1;i>=0; i--){
+        s+= str[i];
+    }
+    if(str==s){
+        console.log(`Palindrom`)
+    }
+    else{
+        console.log(`not Palindrom`)
+    }
+} ;
+pali()
+
+    </script>
+</body>
+</html>
