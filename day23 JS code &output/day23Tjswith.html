@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        background-color: beige;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    h2{
+        font-weight: bolder;
+        color: black;
+        text-align: center;
+    }
+    .container{
+        max-width:800px;
+        margin:auto;
+        background:white;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 0 10px rgba(0,0,0,0.2);
+    }
+label{
+ font-weight:bold;
+       
+        margin-top:15px;
+}
+textarea{
+    width: 500px;
+    margin-top: 8px;
+    border-radius: 10px;
+    background-color: azure;
+}
+.options{
+    margin-top:8px;
+}
+ button{
+    padding: 10px;
+    background-color: rgb(12, 151, 12);
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+     cursor:pointer;
+ }
+ button:hover{
+background-color: darkgreen;
+
+ }
+ #result{
+    margin-top: 20px;
+     padding:10px 20px;
+        background:#e8f5e9;
+        border-left:5px solid green;
+ }
+</style>
+
+
+<body>
+    <br>
+    <div class="container">
+    <h2>Customer Feedback Form</h2>
+
+    <form id="feedbackForm">
+    <label for="name">Name:</label> 
+    <input type="text" id="name" required placeholder="eg.naren"> <br>
+    <br>
+    <label for="Email" > Email:</label>
+<input type="email" id="email" required placeholder="example@gmail.com"> <br>
+    <br>
+    <label for="reason">    Reason for Visit / Purchase</label>
+     <div class="options">
+<label ><input type="radio" name="reason" value="Product Purchase" required >Product Purchase </label> <br>
+<label ><input type="radio" name="reason" value="Customer Support" required >Customer Support </label> <br>
+<label ><input type="radio" name="reason" value="Browsing / Research" required >Browsing / Research </label> <br>
+<label ><input type="radio" name="reason" value=" Other" required > Other </label> <br> </div>
+<br>
+<br>
+<label for="Satisfaction">overall Satisfaction</label> 
+ <div class="options">
+<label ><input type="radio" name="Satisfaction" value=" Very Dissatisfied" required > Very Dissatisfied </label> <br>
+<label ><input type="radio" name="Satisfaction" value="  Dissatisfied " required >Dissatisfied </label> <br>
+<label ><input type="radio" name="Satisfaction" value="  Neutral" required >  Neutral </label> <br>
+<label ><input type="radio" name="Satisfaction" value="  Satisfied" required >  Satisfied </label> <br>
+<label ><input type="radio" name="Satisfaction" value=" Very Satisfied" required > Very Satisfied </label> <br> </div>
+<br>
+<br>
+<label for="Navigation">Ease of Use / Navigation</label><br>
+ <div class="options">
+<label><input type="radio" name="navigation" value="Very Easy ">Very Easy </label> <br>
+<label><input type="radio" name="navigation" value=" Easy"> Easy</label> <br>
+<label><input type="radio" name="navigation" value="Neutral">Neutral</label> <br>
+<label><input type="radio" name="navigation" value=" Difficult"> Difficult</label> <br>
+<label><input type="radio" name="navigation" value=" Very Difficult"> Very Difficult</label> <br> </div>
+<br>
+<br>
+<label for="Service Quality">Product / Service Quality</label> <br>
+ <div class="options"> <div class="options">
+<label ><input type="radio" name="Service"  value="Excellent">Excellent</label> <br>
+<label ><input type="radio" name="Service" value=" Good "> Good </label> <br>
+<label ><input type="radio" name="Service" value="Average ">Average </label> <br>
+<label ><input type="radio" name="Service" value=" Poor"> Poor</label> <br>
+<label ><input type="radio" name="Service" value="Very Poor">Very Poor</label> <br> </div>
+<br>
+<br>
+<label for=" Customer Support ">Staff / Customer Support Helpfulness</label> <br>
+ <div class="options">
+<label ><input type="radio" name="Support" value=" N/A - No interaction">N/A - No interaction </label> <br>
+<label ><input type="radio" name="Support" value="Extremely Helpful "> Extremely Helpful</label> <br>
+<label ><input type="radio" name="Support" value=" Somewhat Helpful "> Somewhat Helpful </label> <br>
+<label ><input type="radio" name="Support" value=" Unhelpful">Unhelpful </label> <br> </div>
+<br>
+<br>
+<label for="">
+How likely are you to recommend us to a friend? Score (0 to 10): </label> <br>
+<input type="number" id="recommand" min="0" max="10"> <br>
+<br>
+<br>
+<label for="What can we improve?">What can we improve?</label> <br>
+ <div class="options">
+<label ><input type="checkbox" name="improve" value=" Product Selection " > Product Selection</label> <br>
+<label ><input type="checkbox" name="improve" value="Pricing">Pricing</label> <br>
+<label ><input type="checkbox" name="improve" value="Website / App">Website / App</label><br>
+<label ><input type="checkbox" name="improve" value="Delivery / Service Speed">Delivery / Service Speed</label><br>
+<label ><input type="checkbox" name="improve" value="Customer Support">Customer Support</label><br> </div>
+<br>
+<br>
+<label for="Additional Comments ">Additional Comments</label> <br>
+<textarea name="Additional Comments" id="Comments" rows="4" ></textarea> <br>
+<br>
+ <button type="submit">Submit Feedback</button>
+    </form>  <div id="result"></div>
+    <br>
+
+    <script>
+        window.onload = function () {
+            document.getElementById("name").value=
+            localStorage.getItem("name") || "" ;
+            document.getElementById("email").value=
+            localStorage.getItem("email") || "";
+
+        };
+          document.getElementById("feedbackForm").addEventListener("submit", function(f){
+            f.preventDefault();
+           let name=document.getElementById("name").value
+           let email=document.getElementById("email").value
+           let recommand=document.getElementById("recommand").value
+           let comments=document.getElementById("Comments").value
+
+           let reason=document.querySelector(`input[name="reason"]:checked`)?.value
+           let Satisfaction=document.querySelector(`input[name="Satisfaction"]:checked`)?.value
+           let Navigation=document.querySelector(`input[name="navigation"]:checked`)?.value
+           let Service=document.querySelector(`input[name="Service"]:checked`)?.value
+           let Support=document.querySelector(`input[name="Support"]:checked`)?.value
+           let  improve = [];
+           document.querySelectorAll(`input[name="improve"]:checked`)
+           .forEach(item => {
+            improve.push(item.value)
+           });
+
+               localStorage.setItem("name",name);
+               localStorage.setItem("email",email);
+
+            let feedback ={
+                reason,comments,Satisfaction,Navigation,Service,Support,improve
+            }
+            sessionStorage.setItem("feedback",JSON.stringify(feedback));
+
+            document.getElementById("result").innerHTML=`
+            <h2>FEEDBACK FORM CREATED SUCCESSFULLY </h2>
+             <p> <b> NAME: </b> ${name} </p>
+             <p> <b> EMAIL:</b> ${ email} </p>   
+             <p> <b> REASON: </b> ${ reason} </p>
+             <p> <b> SATISFACTION </b> ${Satisfaction } </p>
+             <p> <b> RECOMMAND </b> ${recommand } </p> `
+          })
+    </script>
+</div>
+</body>
+</html>
