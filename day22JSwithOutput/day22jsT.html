@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1.Find the Sum , Average of Array Elements <br>
+         2.Find the Largest Element of array elements. <br>
+          3.Find the smallest Element of array elements. <br>
+           4.Count positive and negative numbers. <br>
+           5.Print duplicate elements. <br>
+           6.Search an <br>
+            7.Find the frequency of each element. <br>
+            8.Check whether an array is sorted. <br>
+            9.Find the missing number in an array (1 to n). <br>
+         10.Separate even and odd numbers into two arrays</h3>
+    <script>
+        
+        let arr = [10, 20, 30, 40, 50];
+
+let sum = 0;
+
+for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+}
+
+let average = sum / arr.length;
+
+console.log("Sum =", sum);
+console.log("Average =", average);
+console.log("----------------------")
+let a = [12, 45, 7, 89, 34];
+
+let largest = arr[0];
+
+for (let i = 1; i < a.length; i++) {
+    if (a[i] > largest) {
+        largest = a[i];
+    }
+}
+
+console.log("Largest Element =", largest);
+
+console.log("--------------------------")
+let b=[534,224,244,244,21,55,123];
+
+let smallest=b[0];
+
+for (let i=1; i < b.length; i++){
+    if(b[i]< smallest) {
+        smallest = b[i];
+    }
+}
+console.log("smallest number:",smallest)
+console.log("--------------------------")
+let p=[47,-45,55,-56,85,5,45];
+let positive=0;
+let negative=0;
+
+for(let i=0 ;i<p.length;i++){
+    if(p[i]>0){
+        positive++
+    }
+    else if (p[i]<0){
+        negative++
+    }
+}
+console.log("positive number:",positive);
+console.log("positive number:",negative);
+console.log("------------------------------")
+let hh=[45,55,34,55,45,33,989,989,77,44,77];
+console.log("checking duplicate numbers")
+
+for(i=0;i<hh.length;i++){
+    for(j=i+1;j<hh.length;j++){
+        if(hh[i]==hh[j]){
+            console.log("duplicate numbers are:")
+            console.log( hh[i]);
+            break;
+        }
+    }
+}
+console.log("-------------------")
+let cc=[10,30,56,89,49];
+let search=499 ;
+let found=false;
+
+for(i=0;i<hh.length;i++){
+    if(cc[i]==search){
+        found=true;
+        break;
+    }
+}
+if(found){
+    console.log("element found")
+}
+else{
+    console.log("not found")
+}
+console.log("-------------------------")
+let bb=[10,20,30,10,20,40,50,30,40,60,90];
+for (let i=0;i < bb.length; i++){
+    let count =1;
+    if(bb[i]!== -1){
+        for(let j=i+1; j< bb.length; j++){
+            if(bb[i]==bb[j]){
+            count++;
+            bb[j]=-1;
+            }
+        }
+        
+    console.log(bb[i] +"occurs " + count + "times"  )
+    }
+}
+console.log("-------------------------")
+let vv=[10,20,5,40,50];
+let sorted=true;
+
+for(let i=0;i<vv.length-1;i++){
+    if(vv[i] > vv [i + 1]) {
+        sorted =false;
+        break;
+
+    }
+}
+    if(sorted){
+        console.log("sorted array")
+    }
+    else{
+        console.log("not sorted")
+    }
+console.log("--------------------------- ")
+let miss=[1,2,3,4,6];
+let n=6;
+let total = (n*(n+1)) / 2;
+let summ=0;
+
+for(i=0;i<miss.length;i++){
+    summ+=miss[i]
+}
+let missing = total-summ;
+console.log("missing number is:" ,missing)
+console.log("---------------------")
+let All=[2,34,546,66,55,89,359,67,55,44,22];
+
+let even=[];
+let odd=[];
+
+for(let i=0;i<All.length;i++){
+    if(All[i] % 2 ===0){
+        even.push(All[i]);
+
+    }
+    else{
+        odd.push(All[i]);
+    }
+}
+console.log("even number",even)
+console.log("odd numbers",odd)
+    </script>
+</body>
+</html>
