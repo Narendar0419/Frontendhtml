@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>JavaScript DOM Basic Tasks <br>
+
+<br>
+
+    </h3>
+ <br>
+ <br>
+ <h2>1.Create a webpage with a heading and a button. When the button is clicked, change the heading text using getElementById(). </h2> 
+ <br>
+ <h1 id="heading"> welcome to java script </h1>
+ <button onclick="changeheading()" style="background-color: brown; color: azure; border-radius: 4px; width: 90px; height: 35px; padding: 7px;" >hedaing</button>
+<br>
+
+<h2>2.Create a paragraph and a button. When the button is clicked, change the paragraph's text colour to blue and increase its font size using getElementById()
+
+Using getElementsByTagName() </h2> 
+<br>
+ <p > Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla quo doloribus consectetur 
+    perspiciatis debitis incidunt voluptates eveniet porro sunt voluptatem.</p>
+    <button onclick="changepara()" style="width: 100px; background-color: blueviolet; color: aliceblue;" >change text color</button>
+    <br>
+    <br>
+    <h2>3.Create four paragraph elements. Write JavaScript to change the text colour of all paragraphs to green using getElementsByTagName().</h2> <br>
+    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Quaerat natus deserunt nam doloribus sit autem officiis aliquam nemo illo 
+         quidem nisi laboriosam, molestias incidunt sapiente reiciendis et magni laudantium. Sunt.</p> 
+         <br>
+          <p >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Quaerat natus deserunt nam doloribus sit autem officiis aliquam nemo illo 
+         quidem nisi laboriosam, molestias incidunt sapiente reiciendis et magni laudantium. Sunt.</p> <br>
+<br>
+          <p >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Quaerat natus deserunt nam doloribus sit autem officiis aliquam nemo illo 
+         quidem nisi laboriosam, molestias incidunt sapiente reiciendis et magni laudantium. Sunt.</p> 
+         <br>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Quaerat natus deserunt nam doloribus sit autem officiis aliquam nemo illo 
+         quidem nisi laboriosam, molestias incidunt sapiente reiciendis et magni laudantium. Sunt.</p>
+         <br>
+         <h2>
+4.Create a webpage with five li> elements inside a ul>. Use getElementsByTagName() to count the total number of list items and display the count. 
+Using getElementsByClassName() </h2> 
+<br>
+         <ul type="disc">
+            <li class="iteam">list hhh</li>
+            <li class="iteam">list nnn</li>
+            <li class="iteam">list bbbb</li>
+            <li class="iteam">list nuuuu</li>
+         </ul>
+         <h2 id="result"></h2>
+         <br>
+         <h2>5.Create three paragraphs with the same class name. Change the background colour of all paragraphs using getElementsByClassName(). </h2>
+         <br>
+         <p class="ALL">color change all three para using byclassname</p>
+          <p class="ALL">color change all three para using byclassname</p>
+           <p class="ALL">color change all three para using byclassname</p>
+ <br>
+ <br>
+ <h26.Create four buttons with the same class name. Use getElementsByClassName() to disable all the buttons when another button is clicked.
+
+Using CSS Selectors (querySelector() and querySelectorAll()) </h2>
+ <br>
+ <button class="same" >button01</button> <br>
+ <br>
+  <button class="same" > button02</button> <br>
+<br>
+   <button class="same"  >"button03</button> <br>
+<br>
+    <button class="same"  >button04</button>
+    <br>
+    <br>
+    <button   onclick="buttonbtn()" style="background-color: black; color: aliceblue; width: 140px; height: 34px; border-radius: 6px" >button disable</button>
+    <br>
+    <br>
+    <h2>7.Create a heading with an ID and change its text using querySelector() when a button is clicked. </h2>
+    <br>
+    <h3 id="head01" >heading change</h3>
+    <button onclick="changehead()"  style="width: 100px; height: 40px; background-color: rgb(50, 2, 27); color: aliceblue;">CLICK HERE TO CHANGE</button>
+ <br>
+ <br>
+ <h2>8.Create five elements with the same class name. Use querySelectorAll() to change the text colour and font style of all selected elements</h2>
+    <br>
+ <br>
+ <h3 class="last">hello.1</h3>
+ <h4 class="last">hello09</h4>
+ <h2 class="last">hello.99</h2>
+ <h1 class="last">hello.88</h1>
+
+ 
+
+
+
+<script>
+    function changeheading(){
+        document.getElementById("heading").innerHTML="changed succesfully "
+    }
+
+    function changepara(){
+       let para= document.getElementsByTagName("p")[0];
+        para.style.color="blue";
+        para.style.fontSize="30px"
+    }
+    
+
+       let p= document.getElementsByTagName("p")
+    for(i=0;i<p.length;i++){
+        p[i].style.color="green"
+    }
+    
+  let total=document.getElementsByClassName("iteam");
+  document.getElementById("result").innerHTML="total number of items is:" + total.length;
+
+   let all= document.getElementsByClassName("ALL");
+   for(i=0;i<all.length;i++){
+    all[i].style.color="red"
+}
+
+function buttonbtn(){
+    let buttons=document.querySelectorAll(".same")
+       buttons.forEach(function(button){
+        button.disabled=true;
+       });
+}
+function changehead(){
+document.querySelector("#head01").innerHTML="change heading by click button program 07"
+}
+
+let L= document.querySelectorAll(".last");
+    for(i=0;i<L.length;i++){
+       L[i].style.color="black"
+       L[i].style.fontSize="40px"
+    }
+
+ </script>
+</body>
+</html>
