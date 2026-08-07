@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello</h1>
+    <script>
+        class student{
+            constructor(sid,sname){
+                this.sid=sid;
+                this.sname=sname;
+            }
+            display(){
+                console.log(`student id:${this.sid} and student name is :${this.sname}`);
+            }
+        }
+        let stud=new student(1,"jack");
+        stud.display()
+        let stud1=new student(2,"naren")
+        stud1.display();
+
+        class employee{
+            constructor (empid,empname,empsalary){
+                this.empid=empid;
+                this.empname=empname;
+                this.empsalary=empsalary;
+            }
+            displayemployee(){
+                console.log(`empid:${this.empid} and employee name is: ${this.empname} and employee salary is:${this.empsalary}`)
+            }
+            getempdet()
+           {
+            this.empid=prompt("enter your employee id")
+                this.empname=prompt("enter your name")
+                this.empsalary=prompt("enter your salary")
+           }
+
+        }
+          
+
+          let emp1=new employee(1,"naren",30000)
+            emp1.displayemployee();
+             let emp2=new employee();
+             emp2.getempdet();
+          emp2.displayemployee();
+    </script>
+</body>
+</html>
