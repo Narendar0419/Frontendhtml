@@ -1,0 +1,50 @@
+show databases;
+create database yystore;
+use yystore;
+create table customer (customer_id int, customer_name varchar(30),phone int);
+create table eeorder(oder_id int,order_date date,amount int,orderstatus varchar(20) default 'pending', check (amount>0));
+drop table eeorder;
+insert into customer values ('2002', 'arun', '37987677');
+insert into eeorder values ('2003', '2030-09-23', '54354', 'shipped');
+select * from customer;
+select * from eeorder;
+create table doctor (doctor_id  int primary key ,DoctorName varchar (30),Specialization varchar (45));
+drop table doctor;
+create table patient (patient_id int primary key,PatientName varchar(39),Age int,DoctorID int  ,eStatus varchar(25) default 'active' ,  constraint uk_01 FOREIGN KEY (DoctorID) REFERENCES doctor(doctor_id) ,check ( Age > 0));
+INSERT INTO doctor
+VALUES (101, 'Dr. Kumar', 'Cardiology');
+INSERT INTO Patient VALUES (101, 'Naren', 22,102,'');
+INSERT INTO Patient VALUES (102, 'Narennn', 22,101,'');
+select * from doctor;
+select * from patient;
+create table bankcustomer (customer_id  int primary key , bcustomer_name varchar(30),bphone int);
+drop table bankcustomer;
+create table bankaccount(account_id int primary key,customer_id int ,acctount_type varchar(29),balance int,account_status varchar(20) default 'active', constraint uk_02 FOREIGN KEY (customer_id) REFERENCES bankcustomer(customer_id), check (balance>0) );
+drop table bankaccount;
+INSERT INTO bankcustomer VALUES (879, 'dinesh','887876868');
+INSERT INTO bankaccount
+(account_id, customer_id, acctount_type, balance)
+VALUES (1028, 879, 'savings', 9889);
+select * from bankaccount;
+select * from bankcustomer;
+create table Publisher (publisher_id int primary key, publisher_name varchar(30), city char(30));
+create table book(BookID int ,BookName varchar(50),PublisherID int,Price int,AvailableCopies int default '1', constraint uk_03 foreign key (PublisherID) references publisher(publisher_id), check (price>0));
+drop table book;
+INSERT INTO publisher VALUES (444, 'suresh','london');
+INSERT INTO publisher VALUES (4464, 'dinesh','london');
+INSERT INTO publisher VALUES (4490, 'danush','washinton');
+INSERT INTO book (BookID,BookName,PublisherID,Price) VALUES(879, 'artofthinking',444,1000);
+INSERT INTO book (BookID,BookName,PublisherID,Price) VALUES(875, 'stock',4464,1060);
+INSERT INTO book (BookID,BookName,PublisherID,Price) VALUES(874, 'stock',4490,1060);
+select*from publisher;
+select * from  book;
+create table teacher(teacher_id int primary key,teaacher_name varchar(34),experience varchar(40) check (experience >=0));
+drop table teacher;
+create table tsubject(subject_id int,subject_name varchar(40),teacherid int ,subject_status varchar(30) default 'avilable',constraint uk_04 foreign key (teacherid) references teacher(teacher_id)  ); 
+insert into teacher values(899,'anu','3');
+insert into teacher values(8969,'anuuu','3');
+insert into tsubject (subject_id,subject_name,teacherid) values ('7666','oops','8969');
+insert into tsubject values ('7666','oops','899');
+select*from teacher;
+select * from  tsubject;
+
